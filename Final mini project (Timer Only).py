@@ -1,4 +1,3 @@
-
 import sublime, sublime_plugin
 import os
 import sys
