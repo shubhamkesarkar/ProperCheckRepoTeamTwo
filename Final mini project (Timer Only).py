@@ -17,7 +17,7 @@ settings = sublime.load_settings("ProperCheckRepoTeamTwo.sublime-settings")
 
 
 #some global variables adfs																														#imports all from module git, because exceptions file needs to be imported
-#counter123 = 0
+#number_saves_before_push = 0
 
 #counter = 1
 #repo = Repo(settings.get("REPO_PATH"))
@@ -55,7 +55,7 @@ class myOpener(sublime_plugin.EventListener):
 				global repo								
 				repo = Repo(temp_dir,search_parent_directories=True)
 				#self.view.insert(edit, 0, str(repo))
-			#except InvalidGitRepositoryError :																			#exception handled when .git is not found
+			except InvalidGitRepositoryError :																			#exception handled when .git is not found
 					# forwd_slash_index = temp_dir.rfind('/', 0, len(temp_dir))   				#finds index of last forward slash
 
 					#self.view.insert(edit, 0, str(forwd_slash_index))
@@ -101,12 +101,12 @@ class myOpener(sublime_plugin.EventListener):
 				#sublime.message_dialog(new_dir)
 				sublime.message_dialog("repository pushed")
 
-			global counter123
-			counter123 += 1 
-			sublime.message_dialog(str(counter123))
+			global number_saves_before_push
+			number_saves_before_push += 1 
+			sublime.message_dialog(str(number_saves_before_push))
 			sublime.message_dialog(str(settings.get("x_savespush")))
-			if counter123 == settings.get("x_savespush") :
-				counter123 = 0
+			if number_saves_before_push == settings.get("x_savespush") :
+				number_saves_before_push = 0
 				push_repo()
 				
 
