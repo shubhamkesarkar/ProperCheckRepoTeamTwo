@@ -18,9 +18,7 @@ savedictionary = {}
 
 
 #some global variables 																													#imports all from module git, because exceptions file needs to be imported
-# global number_saves_before_push
 
-# number_saves_before_push = 0
 
 counter = 1
 
