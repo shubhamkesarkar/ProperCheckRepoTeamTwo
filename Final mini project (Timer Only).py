@@ -101,7 +101,6 @@ class myOpener(sublime_plugin.EventListener):
 				#sublime.message_dialog(new_dir)
 				sublime.message_dialog("repository pushed")
 
-			global number_saves_before_push
 			number_saves_before_push += 1 
 			sublime.message_dialog(str(number_saves_before_push))
 			sublime.message_dialog(str(settings.get("x_savespush")))
