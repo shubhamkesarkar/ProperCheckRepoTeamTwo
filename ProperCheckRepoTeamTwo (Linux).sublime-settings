@@ -1,4 +1,8 @@
 {
 	"x_savespush":5,
 	"Y_SECONDS_COMMIT":5,
+	"extensions": 
+	[
+	".txt",
+	],
 }
