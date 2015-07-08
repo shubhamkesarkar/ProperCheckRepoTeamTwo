@@ -73,7 +73,7 @@ class myOpener(sublime_plugin.EventListener):
 
 		global counter
 		if counter == 1:
-			global repo
+			#global repo
 			sublime.message_dialog("on_post_save")
 			sublime.message_dialog(str(repo.git.status()))
 			#sublime.message_dialog("You have saved the file")
