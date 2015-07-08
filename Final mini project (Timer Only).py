@@ -127,5 +127,3 @@ class myOpener(sublime_plugin.EventListener):
 
 		
 		#sublime.set_timeout(on_post_save, Y_SECONDS_COMMIT * 1000)
-
-w
