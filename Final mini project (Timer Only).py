@@ -7,20 +7,14 @@ sys.path.append("/home/shubham/.config/sublime-text-3/Packages/User" + "/lib/pyt
 
 from git import *	
 
-
-
 settings = sublime.load_settings("ProperCheckRepoTeamTwo.sublime-settings")
-
-
 
 savedictionary = {}
 
-
-
 #some global variables 																													#imports all from module git, because exceptions file needs to be imported
-global number_saves_before_push
+# global number_saves_before_push
 
-number_saves_before_push = 0
+# number_saves_before_push = 0
 
 counter = 1
 
