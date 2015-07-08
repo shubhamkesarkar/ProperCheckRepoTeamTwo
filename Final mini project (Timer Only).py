@@ -83,8 +83,7 @@ class myOpener(sublime_plugin.EventListener):
 
 			#sublime.message_dialog("and now it has been committed")
 			sublime.message_dialog(str(repo.git.status()))
-			sublime.message_dialog(str(savedictionary))
-			
+
 
 			def push_repo():
 				forwd_slash_index = temp_dir.rfind('/', 0, len(temp_dir))   				#finds index of last forward slash
