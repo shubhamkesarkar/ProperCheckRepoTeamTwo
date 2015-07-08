@@ -26,29 +26,6 @@ counter = 1
 
 
 
-#repo = Repo(settings.get("REPO_PATH"))
-
-# class UserinputCommand(sublime_plugin.TextCommand):
-# 	def run(self, edit):
-# # 		#temp_dir = "/home/kahlil/TestingGit"
-# # 		#join = os.path.join
-# # 		#sublime.message_dialog("control is here")
-# 		sublime.message_dialog(str(settings.get("x_savespush")))
-# # 		self.view.window().show_input_panel("Push after number of commits", "Enter number here", self.on_done, None, None)																										#creates a git.Repo object to represent your repository.
-		
-
-# # 	def on_done(self, user_input):
-# # 		sublime.message_dialog("Push after "+ X_SAVES_Push + " commits")
-# # 		global commit_before_push
-# # 		commit_before_push = int(user_input)
-
-
-# class GitfunctionsCommand(sublime_plugin.TextCommand):
-# 	def run(self, edit):
-		
-# 		#join = os.path.join																											#creates a git.Repo object to represent your repository.
-		
-
 class myOpener(sublime_plugin.EventListener):		
 
 	def on_post_save(self,view):
