@@ -53,7 +53,7 @@ class myOpener(sublime_plugin.EventListener):
 		temp_dir = str(view.file_name())
 
 		def repo_check(temp_dir):																									#code checks for .git in the folder	
-			try :		
+			#try :		
 				global repo								
 				repo = Repo(temp_dir,search_parent_directories=True)
 				#self.view.insert(edit, 0, str(repo))
