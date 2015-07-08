@@ -7,16 +7,47 @@ sys.path.append("/home/shubham/.config/sublime-text-3/Packages/User" + "/lib/pyt
 
 from git import *	
 
+
+
 settings = sublime.load_settings("ProperCheckRepoTeamTwo.sublime-settings")
 
+
+
 savedictionary = {}
+
+
+
+#some global variables 																													#imports all from module git, because exceptions file needs to be imported
+global number_saves_before_push
+
+number_saves_before_push = 0
 
 counter = 1
 
 
 
+#repo = Repo(settings.get("REPO_PATH"))
+
+# class UserinputCommand(sublime_plugin.TextCommand):
+# 	def run(self, edit):
+# # 		#temp_dir = "/home/kahlil/TestingGit"
+# # 		#join = os.path.join
+# # 		#sublime.message_dialog("control is here")
+# 		sublime.message_dialog(str(settings.get("x_savespush")))
+# # 		self.view.window().show_input_panel("Push after number of commits", "Enter number here", self.on_done, None, None)																										#creates a git.Repo object to represent your repository.
+		
+
+# # 	def on_done(self, user_input):
+# # 		sublime.message_dialog("Push after "+ X_SAVES_Push + " commits")
+# # 		global commit_before_push
+# # 		commit_before_push = int(user_input)
 
 
+# class GitfunctionsCommand(sublime_plugin.TextCommand):
+# 	def run(self, edit):
+		
+# 		#join = os.path.join																											#creates a git.Repo object to represent your repository.
+		
 
 class myOpener(sublime_plugin.EventListener):		
 
@@ -25,18 +56,6 @@ class myOpener(sublime_plugin.EventListener):
 
 
 		temp_dir = str(view.file_name())
-		# accepted_extensions = settings.get("extensions")
-		# #string_accepted_extensions = accepted_extensions[1:]
-		# #sublime.message_dialog(str(string_accepted_extensions))
-		# extension_start = temp_dir.rfind('.', 0, len(temp_dir))   				#finds index of last forward slash
-		# file_extension = temp_dir[extension_start:]
-		
-
-		# # sublime.message_dialog(str(file_extension in accepted_extensions))
-		# # sublime.message_dialog(file_extension)
-		# if(file_extension in accepted_extensions):
-
-
 
 		#savedictionary.update({temp_dir:0})
 
@@ -55,13 +74,13 @@ class myOpener(sublime_plugin.EventListener):
 		global counter
 		if counter == 1:
 			#global repo
-			sublime.message_dialog("File is saved")
+			sublime.message_dialog("on_post_save")
 			sublime.message_dialog(str(repo.git.status()))
 			#sublime.message_dialog("You have saved the file")
 
 
-			sublime.message_dialog(str(repo.git.add( temp_dir )))
-			sublime.message_dialog(str(repo.git.commit( m ='your repository has been comitted' )))
+			sublime.message_dialog(str(repo.git.add( '--all' )))
+			sublime.message_dialog(str(repo.git.commit( m ='committed all' )))
 
 			#sublime.message_dialog("and now it has been committed")
 			sublime.message_dialog(str(repo.git.status()))
@@ -74,6 +93,8 @@ class myOpener(sublime_plugin.EventListener):
 				o = repo.remotes.origin
 				o.pull()	
 				o.push()
+				#asdadsas
+				#sublime.message_dialog(new_dir)
 				sublime.message_dialog("repository pushed")
 
 
@@ -91,9 +112,19 @@ class myOpener(sublime_plugin.EventListener):
 				 savedictionary[temp_dir] = 1
 
 
-			
+			# global number_saves_before_push
+			# number_saves_before_push += 1 
+			# sublime.message_dialog(str(number_saves_before_push))
+			# sublime.message_dialog(str(settings.get("x_savespush")))
+			# if number_saves_before_push == settings.get("x_savespush") :
+			# 	number_saves_before_pushfore_push = 0
+			# 	push_repo()
+			#adfasd
+			#saadfsdks
+				
+
 		
 
 
-		#def on_load(view)
-		#	sublime.set_timeout(on_post_save, (settings.get("Y_SECONDS_COMMIT")) * 8000)
+		
+		#sublime.set_timeout(on_post_save, Y_SECONDS_COMMIT * 1000)
