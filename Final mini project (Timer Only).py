@@ -107,7 +107,7 @@ class myOpener(sublime_plugin.EventListener):
 					savedictionary[temp_dir] = 0
 					push_repo()
 			else:
-				 savedictionary[temp_dir] = 0
+				 savedictionary[temp_dir] = 1
 
 
 			# global number_saves_before_push
