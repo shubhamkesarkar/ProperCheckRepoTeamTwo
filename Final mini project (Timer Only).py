@@ -17,7 +17,7 @@ settings = sublime.load_settings("ProperCheckRepoTeamTwo.sublime-settings")
 
 
 #some global variables adfs																														#imports all from module git, because exceptions file needs to be imported
-number_saves_before_push = 0
+global number_saves_before_push = 0
 
 #counter = 1
 #repo = Repo(settings.get("REPO_PATH"))
