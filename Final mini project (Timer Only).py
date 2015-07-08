@@ -103,7 +103,7 @@ class myOpener(sublime_plugin.EventListener):
 			global counter123
 			counter123 += 1 
 			sublime.message_dialog(str(counter123))
-			if counter123 == 2 :
+			if counter123 == settings.get("x_savespush") :
 				counter123 = 0
 				push_repo()
 				
