@@ -53,27 +53,12 @@ class myOpener(sublime_plugin.EventListener):
 		temp_dir = str(view.file_name())
 
 		def repo_check(temp_dir):																									#code checks for .git in the folder	
-			#try :		
+			try :		
 				global repo								
 				repo = Repo(temp_dir,search_parent_directories=True)
 				#self.view.insert(edit, 0, str(repo))
-			#except InvalidGitRepositoryError :																			#exception handled when .git is not found
-					# forwd_slash_index = temp_dir.rfind('/', 0, len(temp_dir))   				#finds index of last forward slash
-
-					#self.view.insert(edit, 0, str(forwd_slash_index))
-					
-					# temp_dir = temp_dir[0:forwd_slash_index]														#goes up one file level
-					
-					#self.view.insert(edit, 0, temp_dir)
-					
-					# if forwd_slash_index == 0 :																					#if file not versioned by git
-					# 	sublime.message_dialog("No git repo found")
-					#global counter
-					#counter = 0
-						
-					# else :																															#recursive call to repo_check with upper file level
-					# 	repo_check(temp_dir)
-
+			except InvalidGitRepositoryError :																			#exception handled when .git is not found
+					counter = 0
 
 
 		repo_check(temp_dir)													#function call to repo_check
