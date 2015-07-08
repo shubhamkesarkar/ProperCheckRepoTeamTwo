@@ -19,7 +19,7 @@
                             {
                                 "command": "open_file",
                                 "args": {
-                                    "file": "${packages}/ProperCheckRepo/ProperCheckRepo (OSX).sublime-settings",
+                                    "file": "${packages}/ProperCheckRepoTeamTwo/ProperCheckRepoTeamTwo (OSX).sublime-settings",
                                     "platform": "OSX"
                                 },
                                 "caption": "Settings – Default"
@@ -27,7 +27,7 @@
                             {
                                 "command": "open_file",
                                 "args": {
-                                    "file": "${packages}/ProperCheckRepo/ProperCheckRepo (Linux).sublime-settings",
+                                    "file": "${packages}/ProperCheckRepoTeamTwo/ProperCheckRepoTeamTwo (Linux).sublime-settings",
                                     "platform": "Linux"
                                 },
                                 "caption": "Settings – Default"
@@ -35,14 +35,14 @@
                             {
                                 "command": "open_file",
                                 "args": {
-                                    "file": "${packages}/ProperCheckRepo/ProperCheckRepo (Windows).sublime-settings",
+                                    "file": "${packages}/ProperCheckRepoTeamTwo/ProperCheckRepoTeamTwo (Windows).sublime-settings",
                                     "platform": "Windows"
                                 },
                                 "caption": "Settings – Default"
                             },
                             {
                                 "command": "open_file",
-                                "args": {"file": "${packages}/User/ProperCheckRepo.sublime-settings"},
+                                "args": {"file": "${packages}/User/ProperCheckRepoTeamTwo.sublime-settings"},
                                 "caption": "Settings – User"
                             },
                             { "caption": "-" },
