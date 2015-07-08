@@ -12,7 +12,7 @@ from git import *
 settings = sublime.load_settings("ProperCheckRepoTeamTwo.sublime-settings")
 
 
-savedictionary = {"hello"::123}
+savedictionary = {"hello":123}
 
 
 
