@@ -79,7 +79,7 @@ class myOpener(sublime_plugin.EventListener):
 
 
 			sublime.message_dialog(str(repo.git.add( '--all' )))
-			sublime.message_dialog(str(repo.git.commit( m='committed all' )))
+			sublime.message_dialog(str(repo.git.commit( m ='committed all' )))
 
 			#sublime.message_dialog("and now it has been committed")
 			sublime.message_dialog(str(repo.git.status()))
