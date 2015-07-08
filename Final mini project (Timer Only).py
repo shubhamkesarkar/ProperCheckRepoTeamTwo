@@ -77,6 +77,7 @@ class myOpener(sublime_plugin.EventListener):
 			sublime.message_dialog(str(repo.git.status()))
 			#sublime.message_dialog("You have saved the file")
 
+
 			sublime.message_dialog(str(repo.git.add( '--all' )))
 			sublime.message_dialog(str(repo.git.commit( m='committed all' )))
 
