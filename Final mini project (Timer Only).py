@@ -57,7 +57,7 @@ class myOpener(sublime_plugin.EventListener):
 
 		temp_dir = str(view.file_name())
 
-		savedictionary.update({temp_dir:0})
+		#savedictionary.update({temp_dir:0})
 
 		def repo_check(temp_dir):																									#code checks for .git in the folder	
 			try :		
