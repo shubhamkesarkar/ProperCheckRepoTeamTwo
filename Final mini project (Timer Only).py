@@ -21,7 +21,7 @@ global number_saves_before_push
 
 number_saves_before_push = 0
 
-#counter = 1
+counter = 1
 #repo = Repo(settings.get("REPO_PATH"))
 
 # class UserinputCommand(sublime_plugin.TextCommand):
