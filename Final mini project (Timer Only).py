@@ -115,8 +115,9 @@ class myOpener(sublime_plugin.EventListener):
 			# sublime.message_dialog(str(number_saves_before_push))
 			# sublime.message_dialog(str(settings.get("x_savespush")))
 			# if number_saves_before_push == settings.get("x_savespush") :
-			# 	number_saves_before_push = 0
+			# 	number_saves_before_pushfore_push = 0
 			# 	push_repo()
+			#adfasd
 				
 
 		
@@ -125,3 +126,4 @@ class myOpener(sublime_plugin.EventListener):
 		
 		#sublime.set_timeout(on_post_save, Y_SECONDS_COMMIT * 1000)
 
+w
