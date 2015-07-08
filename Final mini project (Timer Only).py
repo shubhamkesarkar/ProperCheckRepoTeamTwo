@@ -74,13 +74,13 @@ class myOpener(sublime_plugin.EventListener):
 		global counter
 		if counter == 1:
 			#global repo
-			sublime.message_dialog("on_post_save")
+			sublime.message_dialog("File is saved")
 			sublime.message_dialog(str(repo.git.status()))
 			#sublime.message_dialog("You have saved the file")
 
 
-			sublime.message_dialog(str(repo.git.add( '--all' )))
-			sublime.message_dialog(str(repo.git.commit( m ='committed all' )))
+			sublime.message_dialog(str(repo.git.add( temp_dir )))
+			sublime.message_dialog(str(repo.git.commit( m ='your repository has been comitted' )))
 
 			#sublime.message_dialog("and now it has been committed")
 			sublime.message_dialog(str(repo.git.status()))
