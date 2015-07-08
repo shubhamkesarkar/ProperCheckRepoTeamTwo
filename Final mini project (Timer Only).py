@@ -22,12 +22,12 @@ settings = sublime.load_settings("ProperCheckRepoTeamTwo.sublime-settings")
 counter = 1
 #repo = Repo(settings.get("REPO_PATH"))
 
-# class UserinputCommand(sublime_plugin.TextCommand):
-# 	def run(self, edit):
+class UserinputCommand(sublime_plugin.TextCommand):
+	def run(self, edit):
 # 		#temp_dir = "/home/kahlil/TestingGit"
 # 		#join = os.path.join
 # 		#sublime.message_dialog("control is here")
-# 		sublime.message_dialog(str(settings.get("X_SAVES_Push")))
+		sublime.message_dialog(str(settings.get("x_savespush")))
 # # 		self.view.window().show_input_panel("Push after number of commits", "Enter number here", self.on_done, None, None)																										#creates a git.Repo object to represent your repository.
 		
 
