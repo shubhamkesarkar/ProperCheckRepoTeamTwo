@@ -19,7 +19,7 @@ settings = sublime.load_settings("ProperCheckRepoTeamTwo.sublime-settings")
 #some global variables adfs																														#imports all from module git, because exceptions file needs to be imported
 #counter123 = 0
 
-counter = 1
+#counter = 1
 #repo = Repo(settings.get("REPO_PATH"))
 
 # class UserinputCommand(sublime_plugin.TextCommand):
@@ -55,7 +55,7 @@ class myOpener(sublime_plugin.EventListener):
 				global repo								
 				repo = Repo(temp_dir,search_parent_directories=True)
 				#self.view.insert(edit, 0, str(repo))
-			except InvalidGitRepositoryError :																			#exception handled when .git is not found
+			#except InvalidGitRepositoryError :																			#exception handled when .git is not found
 					# forwd_slash_index = temp_dir.rfind('/', 0, len(temp_dir))   				#finds index of last forward slash
 
 					#self.view.insert(edit, 0, str(forwd_slash_index))
