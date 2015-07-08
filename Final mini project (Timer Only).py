@@ -110,17 +110,6 @@ class myOpener(sublime_plugin.EventListener):
 					push_repo()
 			else:
 				 savedictionary[temp_dir] = 1
-
-
-			# global number_saves_before_push
-			# number_saves_before_push += 1 
-			# sublime.message_dialog(str(number_saves_before_push))
-			# sublime.message_dialog(str(settings.get("x_savespush")))
-			# if number_saves_before_push == settings.get("x_savespush") :
-			# 	number_saves_before_pushfore_push = 0
-			# 	push_repo()
-			#adfasd
-			#saadfsdks
 				
 
 		
