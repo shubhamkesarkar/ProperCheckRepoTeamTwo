@@ -95,7 +95,7 @@ class myOpener(sublime_plugin.EventListener):
 				sublime.message_dialog("repository pushed")
 
 
-
+			sublime.message_dialog(str(savedictionary))
 
 
 			if(temp_dir in savedictionary):
