@@ -100,9 +100,9 @@ class myOpener(sublime_plugin.EventListener):
 
 
 			if(temp_dir in savedictionary):
+				savedictionary[temp_dir] += 1
 				sublime.message_dialog(str(savedictionary[temp_dir]))
 				sublime.message_dialog(str(settings.get("x_savespush")))
-				savedictionary[temp_dir] += 1
 				if(savedictionary[temp_dir] == settings.get("x_savespush")):
 					savedictionary[temp_dir] = 0
 					push_repo()
