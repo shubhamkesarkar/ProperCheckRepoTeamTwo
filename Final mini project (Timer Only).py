@@ -91,5 +91,5 @@ class myOpener(sublime_plugin.EventListener):
 		
 
 
-		def on_load(view)
-			sublime.set_timeout(on_post_save, Y_SECONDS_COMMIT * 8000)
+		#def on_load(view)
+		#	sublime.set_timeout(on_post_save, (settings.get("Y_SECONDS_COMMIT")) * 8000)
