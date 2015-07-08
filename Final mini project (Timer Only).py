@@ -13,6 +13,7 @@ from git import *
 settings = sublime.load_settings("ProperCheckRepoTeamTwo.sublime-settings")
 
 
+savedictionary = {}
 
 
 
@@ -22,6 +23,9 @@ global number_saves_before_push
 number_saves_before_push = 0
 
 counter = 1
+
+
+
 #repo = Repo(settings.get("REPO_PATH"))
 
 # class UserinputCommand(sublime_plugin.TextCommand):
@@ -50,7 +54,10 @@ class myOpener(sublime_plugin.EventListener):
 	def on_post_save(self,view):
 
 
+
 		temp_dir = str(view.file_name())
+
+		savedictionary.update({temp_dir:0})
 
 		def repo_check(temp_dir):																									#code checks for .git in the folder	
 			try :		
@@ -88,13 +95,28 @@ class myOpener(sublime_plugin.EventListener):
 				#sublime.message_dialog(new_dir)
 				sublime.message_dialog("repository pushed")
 
-			global number_saves_before_push
-			number_saves_before_push += 1 
-			sublime.message_dialog(str(number_saves_before_push))
-			sublime.message_dialog(str(settings.get("x_savespush")))
-			if number_saves_before_push == settings.get("x_savespush") :
-				number_saves_before_push = 0
-				push_repo()
+
+
+
+
+			if(temp_dir in savedictionary):
+				sublime.message_dialog(str(savedictionary[temp_dir]))
+				sublime.message_dialog(str(settings.get("x_savespush")))
+				savedictionary[temp_dir] += 1
+				if(savedictionary[temp_dir] == settings.get("x_savespush")):
+					savedictionary[temp_dir] = 0
+					push_repo()
+			else:
+				 savedictionary[temp_dir] = 0
+
+
+			# global number_saves_before_push
+			# number_saves_before_push += 1 
+			# sublime.message_dialog(str(number_saves_before_push))
+			# sublime.message_dialog(str(settings.get("x_savespush")))
+			# if number_saves_before_push == settings.get("x_savespush") :
+			# 	number_saves_before_push = 0
+			# 	push_repo()
 				
 
 		
