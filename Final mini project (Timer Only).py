@@ -1,3 +1,4 @@
+#work
 import sublime, sublime_plugin
 import os
 import sys
@@ -13,14 +14,12 @@ settings = sublime.load_settings("ProperCheckRepoTeamTwo.sublime-settings")
 
 
 
-savedictionary = {}
+savedictionary = {} #dictionary
 
 
 
-#some global variables 																													#imports all from module git, because exceptions file needs to be imported
 
 
-counter = 1
 
 
 
@@ -31,81 +30,73 @@ class myOpener(sublime_plugin.EventListener):
 
 
 
-		temp_dir = str(view.file_name())
+		file_path = str(view.file_name())
+		f = open(file_path, 'r')
+		# sublime.message_dialog(str(type(f.readline())))
+
+
+
 
 		accepted_extensions = settings.get("extensions")
-		#string_accepted_extensions = accepted_extensions[1:]
-		#sublime.message_dialog(str(string_accepted_extensions))
-		extension_start = temp_dir.rfind('.', 0, len(temp_dir))   				#finds index of last forward slash
-		file_extension = temp_dir[extension_start:]
+		extension_start = file_path.rfind('.', 0, len(file_path))   				#finds index of . which is the start of extension
+		file_extension = file_path[extension_start:]
 		
 
-		# sublime.message_dialog(str(file_extension in accepted_extensions))
-		# sublime.message_dialog(file_extension)
-		if(file_extension in accepted_extensions):
+		
+		# if(file_extension in accepted_extensions):			
+		if(f.readline() == "#work\n"):
 
 
-
-
-
-
-			#savedictionary.update({temp_dir:0})
-
-			def repo_check(temp_dir):																									#code checks for .git in the folder	
-				try :		
-					global repo								
-					repo = Repo(temp_dir,search_parent_directories=True)
-					#self.view.insert(edit, 0, str(repo))
-				except InvalidGitRepositoryError :																			#exception handled when .git is not found
-						counter = 0
-
-
-			repo_check(temp_dir)													#function call to repo_check
-			
-
-			global counter
-			if counter == 1:
-				#global repo
-				sublime.message_dialog("on_post_save")
-				sublime.message_dialog(str(repo.git.status()))
-				#sublime.message_dialog("You have saved the file")
-
-
-				sublime.message_dialog(str(repo.git.add( '--all' )))
-				sublime.message_dialog(str(repo.git.commit( m ='committed all' )))
-
-				#sublime.message_dialog("and now it has been committed")
-				sublime.message_dialog(str(repo.git.status()))
-
-
-				def push_repo():
-					forwd_slash_index = temp_dir.rfind('/', 0, len(temp_dir))   				#finds index of last forward slash
-					new_dir = temp_dir[0:forwd_slash_index]
-					repo = Repo(new_dir)
-					o = repo.remotes.origin
-					o.pull()	
-					o.push()
-					#asdadsas
-					#sublime.message_dialog(new_dir)
-					sublime.message_dialog("repository pushed")
-
-
+			def repo_check(file_path):
+				global repo																								#code checks for .git in the folder									
+				repo = Repo(file_path,search_parent_directories=True)
 				
 
 
-				if(temp_dir in savedictionary):
-					savedictionary[temp_dir] += 1
-					sublime.message_dialog(str(savedictionary[temp_dir]))
-					sublime.message_dialog(str(settings.get("x_savespush")))
-					if(savedictionary[temp_dir] == settings.get("x_savespush")):
-						savedictionary[temp_dir] = 0
-						push_repo()
-				else:
-					 savedictionary[temp_dir] = 1
-					
+			repo_check(file_path)													#function call to repo_check
+			
+
+			
+			sublime.message_dialog("File is saved")
+			#sublime.message_dialog(str(repo.git.status()))
+
+
+			#sublime.message_dialog(str(
+			repo.git.add( file_path )
+			#))
+			sublime.message_dialog(str(repo.git.commit( m ='your file has been comitted' )))
+
+			
+			sublime.message_dialog(str(repo.git.status()))
+
+
+			def push_repo():
+				forwd_slash_index = file_path.rfind('/', 0, len(file_path))   				#finds index of last forward slash
+				new_dir = file_path[0:forwd_slash_index]
+				repo = Repo(new_dir)
+				remote_directory = repo.remotes.origin
+				remote_directory.pull()	
+				remote_directory.push()
+				sublime.message_dialog("repository pushed")
+
 
 			
 
+			#this is to handle multiple files.	
+			if(file_path in savedictionary):
+				savedictionary[file_path] += 1
+				sublime.message_dialog("Number of times this file has been saved:\n"+str(savedictionary[file_path]))
+				sublime.message_dialog("Number of saves after which file will be pushed:\n"+str(settings.get("x_savespush")))
+				if(savedictionary[file_path] == settings.get("x_savespush")):
+					savedictionary[file_path] = 0
+					push_repo()
+			else:
+				savedictionary[file_path] = 1
+				sublime.message_dialog("Number of times this file has been saved:\n"+str(savedictionary[file_path]))
+				sublime.message_dialog("Number of saves after which file will be pushed:\n"+str(settings.get("x_savespush")))
 
+			
+
+			#Over. Thank you.	
 		
-		#sublime.set_timeout(on_post_save, Y_SECONDS_COMMIT * 1000)
+		
