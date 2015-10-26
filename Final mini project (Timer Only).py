@@ -44,7 +44,7 @@ class myOpener(sublime_plugin.EventListener):
 
 		
 		# if(file_extension in accepted_extensions):			
-		if(f.readline() == "#work\n"):
+		if(f.readline() == "#work\n" or file_extension in accepted_extensions):
 
 
 			def repo_check(file_path):
