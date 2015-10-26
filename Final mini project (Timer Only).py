@@ -98,5 +98,3 @@ class myOpener(sublime_plugin.EventListener):
 			
 
 			#Over. Thank you.	
-		
-		
